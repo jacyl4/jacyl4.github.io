@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle><updated>2020-03-27T04:42:00+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.68.3">Hugo</generator><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-03-27T04:41:59+00:00</updated><published>2019-03-26T00:00:00+00:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian Gateway&amp;amp;DNS)专注旁路，运行于debian的一个完善套件，带界……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
+<p>de_GWD(Debian Gateway&amp;DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速，可以说一骑绝尘。</p>
+<p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
+<p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
+<p><img src="https://i.loli.net/2020/02/26/Sk7awvCJTLsUh8D.png" alt="de_GWD"></p>
+<h1 id="部署">部署</h1>
+<p>提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。</p>
+<p><img src="https://i.loli.net/2019/04/04/5ca5beea00c91.png" alt="dns record"></p>
+<h2 id="服务端">服务端</h2>
+<p><img src="https://i.loli.net/2020/02/23/EZldb3zPtgKGprX.png" alt="server"></p>
+<p>ssh登录vps</p>
+<pre><code>apt install -y wget
+bash &lt;(wget --no-check-certificate -qO- https://raw.githubusercontent.com/jacyl4/de_GWD/master/server)
+</code></pre><p>直接输出上面做好a记录的自己的域名。期间会自动生成uuid跟path。
+脚本结束会打印出uuid跟path。</p>
+<p>附：
+<a href="https://www.uuidgenerator.net/">在线生成UUID</a></p>
+<h2 id="客户端">客户端</h2>
+<p><img src="https://i.loli.net/2020/02/22/5L3go4kPVSmrTID.png" alt="client"></p>
+<p><img src="https://i.loli.net/2020/02/23/6Qb3zBlR5WoPTAe.png" alt="client_do"></p>
+<p>Compatible Edition (amd64&amp;arm64)</p>
+<pre><code>apt install -y wget
+bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client)
+</code></pre><p>General Edition (amd64)</p>
+<pre><code>apt install -y wget
+bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client_do)
+</code></pre><p>通常用第二个脚本，如果是armbian平台的话，才选第一个脚本。</p>
+<p>首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。</p>
+<p>直接联网安装，不需要挂代理。</p>
+<p>选项2，可以用来强制重置pihole密码。</p>
+<p>装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
+<p>有公网ip的话，可以选项8安装wireguard组件。</p>
+<ul>
+<li>
+<p>自动每四小时校时</p>
+</li>
+<li>
+<p>自动每天凌晨更新分流规则</p>
+</li>
+</ul>
+<p>更细致的疑问，<a href="https://t.me/de_GWD">电报群</a>联系吧</p>
+]]></content></entry></feed>
