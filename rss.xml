@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description><generator>Hugo 0.69.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 22 Apr 2020 01:45:00 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>RouterOS电信移动聚合实例</title><link>https://jacyl4.github.io/posts/ros_ct_cmcc/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/ros_ct_cmcc/</guid><pubDate>Wed, 22 Apr 2020 09:42:37 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>实例宽带接入：</p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description><generator>Hugo 0.69.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 22 Apr 2020 01:48:41 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>RouterOS电信移动聚合实例</title><link>https://jacyl4.github.io/posts/ros_ct_cmcc/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/ros_ct_cmcc/</guid><pubDate>Wed, 22 Apr 2020 09:42:37 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
@@ -43,9 +43,9 @@ add chain=srcnat out-interface=pppoe-CMCC1 action=masquerade
 add chain=dstnat protocol=tcp dst-port=1-65535 in-interface=pppoe-CT1 action=dst-nat to-addresses=10.0.0.5 to-ports=1-65535
 </code></pre><h1 id="五pcc宽带聚合">五，PCC宽带聚合</h1>
 <h2 id="0导入国内运营商ip段">0，导入国内运营商ip段</h2>
-<p>下载文件 <a href="https://raw.githubusercontent.com/jacyl4/ros-pbr-CT-CMCC/master/ros-dpbr-CT-CMCC.rsc">ros-dpbr-CT-CMCC.rsc</a>
-导入winbox的Files里
-运行如下，把ip段导入ros firewall的address lists里，供下面标记时使用。（防止重复导入，前两行是删除现有的电信段与移动段）</p>
+<p>下载文件 <a href="https://raw.githubusercontent.com/jacyl4/ros-pbr-CT-CMCC/master/ros-dpbr-CT-CMCC.rsc">ros-dpbr-CT-CMCC.rsc</a></p>
+<p>导入winbox的Files里</p>
+<p>运行如下，把ip段导入ros firewall的address lists里，供下面标记时使用。（防止重复导入，前两行是删除现有的电信段与移动段）</p>
 <pre><code>/ip firewall address-list remove [find list=&quot;dpbr-CT&quot;]
 /ip firewall address-list remove [find list=&quot;dpbr-CMCC&quot;]
 /import ros-dpbr-CT-CMCC.rsc
