@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle><updated>2020-04-29T04:23:45+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.69.2">Hugo</generator><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2020-04-29T04:23:44+00:00</updated><published>2020-04-22T09:42:37+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle><updated>2020-04-29T06:32:57+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.69.2">Hugo</generator><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2020-04-29T06:32:55+00:00</updated><published>2020-04-22T09:42:37+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
@@ -34,6 +34,17 @@ add chain=forward connection-state=related action=accept comment=&quot;allow rel
 add chain=forward protocol=tcp action=jump jump-target=tcp
 add chain=forward protocol=udp action=jump jump-target=udp
 add chain=forward protocol=icmp action=jump jump-target=icmp
+</code></pre><pre><code>/ip firewall raw
+add action=drop chain=prerouting comment=&quot;Port scanners&quot; protocol=tcp psd=21,3s,3,1
+add action=drop chain=prerouting comment=&quot;Drop oversized unfragmented packets&quot; packet-size=1492-65535 protocol=icmp
+add action=drop chain=prerouting comment=&quot;SYN-FIN attack protection&quot; protocol=tcp tcp-flags=fin,syn
+add action=drop chain=prerouting comment=&quot;SYN-RST attack protection&quot; protocol=tcp tcp-flags=syn,rst
+add action=drop chain=prerouting comment=&quot;X-Mas attack protection&quot; protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
+add action=drop chain=prerouting comment=&quot;NMAP FIN attack protection&quot; protocol=tcp tcp-flags=fin,!syn,!rst,!psh,!ack,!urg
+add action=drop chain=prerouting comment=&quot;NMAP Push attack protection&quot; protocol=tcp tcp-flags=fin,syn,rst,ack,urg,!psh
+add action=drop chain=prerouting comment=&quot;NMAP FIN/PSH/URG attack protection&quot; protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
+add action=drop chain=prerouting comment=&quot;NULLflags attack protection&quot; protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg
+add action=drop chain=prerouting comment=&quot;ALLflags attack protection&quot; protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg
 </code></pre><h1 id="四建立nat伪装与端口映射">四，建立nat伪装与端口映射</h1>
 <pre><code>/ip firewall nat
 add chain=srcnat out-interface=pppoe-CT1 action=masquerade
@@ -96,14 +107,14 @@ add chain=output connection-mark=CMCC_conn1 action=mark-routing new-routing-mark
 </code></pre><h1 id="六设置路由">六，设置路由</h1>
 <pre><code>/ip route
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1
-add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1
+add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1 routing-mark=CT1
 add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routing-mark=CT2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 routing-mark=CMCC1
 </code></pre><h1 id="乖巧--v-thx">乖巧 ☆⌒(*＾-゜)v THX!!</h1>
 <p><img src="https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png" alt="给个赏吧"></p>
-]]></content></entry><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-04-29T04:23:44+00:00</updated><published>2019-03-26T00:00:00+00:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian Gateway&amp;amp;DNS)专注旁路，运行于debian的一个完善套件，带界……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
+]]></content></entry><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-04-29T06:32:55+00:00</updated><published>2019-03-26T00:00:00+00:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian Gateway&amp;amp;DNS)专注旁路，运行于debian的一个完善套件，带界……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
 <p>de_GWD(Debian Gateway&amp;DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速，可以说一骑绝尘。</p>
 <p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>

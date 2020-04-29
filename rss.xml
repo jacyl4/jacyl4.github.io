@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description><generator>Hugo 0.69.2 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 29 Apr 2020 04:23:45 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>RouterOS电信移动聚合实例</title><link>https://jacyl4.github.io/posts/ros_ct_cmcc/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/ros_ct_cmcc/</guid><pubDate>Wed, 22 Apr 2020 09:42:37 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>实例宽带接入：</p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description><generator>Hugo 0.69.2 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 29 Apr 2020 06:32:57 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>RouterOS电信移动聚合实例</title><link>https://jacyl4.github.io/posts/ros_ct_cmcc/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/ros_ct_cmcc/</guid><pubDate>Wed, 22 Apr 2020 09:42:37 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
@@ -34,6 +34,17 @@ add chain=forward connection-state=related action=accept comment=&quot;allow rel
 add chain=forward protocol=tcp action=jump jump-target=tcp
 add chain=forward protocol=udp action=jump jump-target=udp
 add chain=forward protocol=icmp action=jump jump-target=icmp
+</code></pre><pre><code>/ip firewall raw
+add action=drop chain=prerouting comment=&quot;Port scanners&quot; protocol=tcp psd=21,3s,3,1
+add action=drop chain=prerouting comment=&quot;Drop oversized unfragmented packets&quot; packet-size=1492-65535 protocol=icmp
+add action=drop chain=prerouting comment=&quot;SYN-FIN attack protection&quot; protocol=tcp tcp-flags=fin,syn
+add action=drop chain=prerouting comment=&quot;SYN-RST attack protection&quot; protocol=tcp tcp-flags=syn,rst
+add action=drop chain=prerouting comment=&quot;X-Mas attack protection&quot; protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
+add action=drop chain=prerouting comment=&quot;NMAP FIN attack protection&quot; protocol=tcp tcp-flags=fin,!syn,!rst,!psh,!ack,!urg
+add action=drop chain=prerouting comment=&quot;NMAP Push attack protection&quot; protocol=tcp tcp-flags=fin,syn,rst,ack,urg,!psh
+add action=drop chain=prerouting comment=&quot;NMAP FIN/PSH/URG attack protection&quot; protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack
+add action=drop chain=prerouting comment=&quot;NULLflags attack protection&quot; protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg
+add action=drop chain=prerouting comment=&quot;ALLflags attack protection&quot; protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg
 </code></pre><h1 id="四建立nat伪装与端口映射">四，建立nat伪装与端口映射</h1>
 <pre><code>/ip firewall nat
 add chain=srcnat out-interface=pppoe-CT1 action=masquerade
@@ -96,7 +107,7 @@ add chain=output connection-mark=CMCC_conn1 action=mark-routing new-routing-mark
 </code></pre><h1 id="六设置路由">六，设置路由</h1>
 <pre><code>/ip route
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1
-add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1
+add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1 routing-mark=CT1
 add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routing-mark=CT2
