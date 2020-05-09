@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.70.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sat, 09 May 2020 00:08:58 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>RouterOS电信移动聚合实例</title><link>https://jacyl4.github.io/posts/ros_ct_cmcc/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/ros_ct_cmcc/</guid><pubDate>Wed, 22 Apr 2020 09:42:37 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>实例宽带接入：</p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.70.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sat, 09 May 2020 00:40:21 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>RouterOS电信移动聚合实例</title><link>https://jacyl4.github.io/posts/ros_ct_cmcc/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/ros_ct_cmcc/</guid><pubDate>Wed, 22 Apr 2020 09:42:37 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
@@ -120,7 +120,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。</p>
 <p><img src="https://i.loli.net/2019/04/04/5ca5beea00c91.png" alt="dns record"></p>
 <h2 id="服务端">服务端</h2>
-<p><img src="https://i.loli.net/2020/02/23/EZldb3zPtgKGprX.png" alt="server"></p>
+<p><img src="https://i.loli.net/2020/05/09/NbAYPetxiHWjKql.png" alt="Snipaste_2020-05-09_08-33-46.png"></p>
 <p>ssh登录vps</p>
 <pre><code>apt install -y wget
 bash &lt;(wget --no-check-certificate -qO- https://raw.githubusercontent.com/jacyl4/de_GWD/master/server)
@@ -129,15 +129,15 @@ bash &lt;(wget --no-check-certificate -qO- https://raw.githubusercontent.com/jac
 <p>附：
 <a href="https://www.uuidgenerator.net/">在线生成UUID</a></p>
 <h2 id="客户端">客户端</h2>
-<p><img src="https://i.loli.net/2020/02/22/5L3go4kPVSmrTID.png" alt="client"></p>
-<p><img src="https://i.loli.net/2020/02/23/6Qb3zBlR5WoPTAe.png" alt="client_do"></p>
+<p><img src="https://i.loli.net/2020/05/09/r1etxqvofSXlOGJ.png" alt="Snipaste_2020-05-09_08-34-34.png"></p>
+<p>General Edition (amd64)</p>
+<pre><code>apt install -y wget
+bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client_do)
+</code></pre><p><img src="https://i.loli.net/2020/05/09/YKIRUT6JHbS71ak.png" alt="Snipaste_2020-05-09_08-34-08.png"></p>
 <p>Compatible Edition (amd64&amp;arm64)</p>
 <pre><code>apt install -y wget
 bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client)
-</code></pre><p>General Edition (amd64)</p>
-<pre><code>apt install -y wget
-bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client_do)
-</code></pre><p>通常用第二个脚本，如果是armbian平台的话，才选第一个脚本。</p>
+</code></pre><p>通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。</p>
 <p>首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。</p>
 <p>直接联网安装，不需要挂代理。</p>
 <p>选项2，可以用来强制重置pihole密码。</p>
