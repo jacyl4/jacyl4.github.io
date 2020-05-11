@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.70.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Mon, 11 May 2020 16:35:53 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>终端内用于查看网络情况的指令</title><link>https://jacyl4.github.io/posts/shell_net_test/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/shell_net_test/</guid><pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.70.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Mon, 11 May 2020 17:19:42 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>终端内用于查看网络情况的指令</title><link>https://jacyl4.github.io/posts/shell_net_test/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/shell_net_test/</guid><pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
 <p><code>ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq</code></p>
 <h4 id="查看端口占用">查看端口占用</h4>
 <p><code>netstat -anp|grep 5390</code></p>
@@ -130,7 +130,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 </code></pre><h1 id="乖巧--v-thx">乖巧 ☆⌒(*＾-゜)v THX!!</h1>
 <p><img src="https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png" alt="给个赏吧"></p>
 ]]></description><category domain="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/">路由</category><category domain="https://jacyl4.github.io/tags/ros/">ros</category><category domain="https://jacyl4.github.io/tags/%E5%88%86%E6%B5%81/">分流</category></item><item><title>de_GWD</title><link>https://jacyl4.github.io/posts/de_gwd/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/de_gwd/</guid><pubDate>Tue, 26 Mar 2019 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
-<p>de_GWD(Debian Gateway&amp;DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。</p>
+<p>de_GWD(Debian bypass Gateway &amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。</p>
 <p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
 <p><img src="https://i.loli.net/2020/02/26/Sk7awvCJTLsUh8D.png" alt="de_GWD"></p>
@@ -138,36 +138,39 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。</p>
 <p><img src="https://i.loli.net/2019/04/04/5ca5beea00c91.png" alt="dns record"></p>
 <h2 id="服务端">服务端</h2>
-<p><img src="https://i.loli.net/2020/05/09/NbAYPetxiHWjKql.png" alt="Snipaste_2020-05-09_08-33-46.png"></p>
-<p>ssh登录vps</p>
-<pre><code>apt install -y wget
-bash &lt;(wget --no-check-certificate -qO- https://raw.githubusercontent.com/jacyl4/de_GWD/master/server)
-</code></pre><p>直接输出上面做好a记录的自己的域名。期间会自动生成uuid跟path。
-脚本结束会打印出uuid跟path。</p>
+<p><img src="https://i.loli.net/2020/05/12/bKfZG3BXWJ9wjD1.png" alt="Snipaste_2020-05-12_01-01-12.png"></p>
+<p>提前准备好域名，做好a记录。</p>
+<p>脚本结束会自动打印出doh，域名，uuid，path等信息。/ 或者用选项11来复查</p>
+<p>服务端默认有自动更新功能，间歇查询github上的版本号，与本地比对，不一致后会自动生成计划任务，+8 凌晨4点30开始自动更新（pihole组件除外）</p>
+<p>nginx配置方面，如需要vps上同时运行wordpress nextcloud等程序。</p>
+<p>/etc/nginx/conf.d</p>
+<p>supp_head 用于存放nginx upstream模块的内容</p>
+<p>supp_body 用于存放wordpress nextcloud等程序的伪静态内容</p>
+<p>然后，平常更新时就可以共存了。</p>
 <p>附：
 <a href="https://www.uuidgenerator.net/">在线生成UUID</a></p>
 <h2 id="客户端">客户端</h2>
-<p><img src="https://i.loli.net/2020/05/09/r1etxqvofSXlOGJ.png" alt="Snipaste_2020-05-09_08-34-34.png"></p>
-<p>General Edition (amd64)</p>
-<pre><code>apt install -y wget
-bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client_do)
-</code></pre><p><img src="https://i.loli.net/2020/05/09/YKIRUT6JHbS71ak.png" alt="Snipaste_2020-05-09_08-34-08.png"></p>
-<p>Compatible Edition (amd64&amp;arm64)</p>
-<pre><code>apt install -y wget
-bash &lt;(wget --no-check-certificate -qO- http://xznat.seso.icu:10290/client)
-</code></pre><p>通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。</p>
+<p>General Edition (amd64)
+<img src="https://i.loli.net/2020/05/12/EdTgwehSUJGpLaB.png" alt="Snipaste_2020-05-12_00-58-45.png"></p>
+<p>Compatible Edition (amd64&amp;arm64)
+<img src="https://i.loli.net/2020/05/12/SYc8MIi3pzTWDla.png" alt="Snipaste_2020-05-12_00-59-03.png"></p>
+<p>通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。如果x86 cpu比较落后，不能运行docker，那也只能选第二个版本。</p>
 <p>首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。</p>
 <p>直接联网安装，不需要挂代理。</p>
 <p>选项2，可以用来强制重置pihole密码。</p>
 <p>装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
 <p>有公网ip的话，可以选项8安装wireguard组件。</p>
+<p>wireguard组件，在每次debian内核更新后，需要重新编译安装。</p>
 <ul>
 <li>
-<p>自动每四小时校时</p>
+<p>自动每二小时校时</p>
 </li>
 <li>
 <p>自动每天凌晨更新分流规则</p>
 </li>
 </ul>
-<p>更细致的疑问，<a href="https://t.me/de_GWD">电报群</a>联系吧</p>
+<p><img src="https://i.loli.net/2020/04/28/GrEYR3LJ51sDA9Q.png" alt="Snipaste_2020-04-28_19-05-37.png"></p>
+<p>内网设备分流ip，用空格分隔。</p>
+<p>更多疑问</p>
+<p><a href="https://t.me/de_GWD"><img src="https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg" alt="Telegram"></a></p>
 ]]></description><category domain="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/">路由</category><category domain="https://jacyl4.github.io/tags/de_gwd/">de_GWD</category><category domain="https://jacyl4.github.io/tags/%E6%97%81%E8%B7%AF/">旁路</category></item></channel></rss>
