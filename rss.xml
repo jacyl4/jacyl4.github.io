@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.71.1 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 27 May 2020 16:12:45 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.71.1 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 27 May 2020 16:15:25 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -8,22 +8,22 @@
 <code>apt install -y xz-utils openssl gawk file</code></p>
 <h4 id="dd命令">DD命令</h4>
 <h5 id="国内">国内</h5>
-<p>bash &lt;(wget --no-check-certificate -qO- <a href="http://moeclub.org/attachment/LinuxShell/InstallNET.sh">http://moeclub.org/attachment/LinuxShell/InstallNET.sh</a> | sed 's/8.8.8.8/119.29.29.29/')<br>
--d 9 -v amd64 -a<br>
--p password<br>
---mirror &quot;http://mirrors.aliyun.com/debian&quot;<br>
---ip-addr 192.168.1.2<br>
---ip-mask 255.255.255.0<br>
---ip-gate 192.168.1.1</p>
-<h5 id="国外">国外</h5>
-<p>bash &lt;(wget --no-check-certificate -qO- <a href="http://moeclub.org/attachment/LinuxShell/InstallNET.sh">http://moeclub.org/attachment/LinuxShell/InstallNET.sh</a> | sed 's/8.8.8.8/1.1.1.1/')<br>
--d 9 -v amd64 -a<br>
--p password<br>
--apt &quot;http://deb.debian.org/debian/debian&quot;<br>
---ip-addr 10.0.0.2<br>
---ip-mask 255.255.255.0<br>
---ip-gate 10.0.0.1</p>
-<ul>
+<pre><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \
+-d 9 -v amd64 -a \
+-p password \
+--mirror &quot;http://mirrors.aliyun.com/debian&quot; \
+--ip-addr 192.168.1.2 \
+--ip-mask 255.255.255.0 \
+--ip-gate 192.168.1.1
+</code></pre><h5 id="国外">国外</h5>
+<pre><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/1.1.1.1/') \
+-d 9 -v amd64 -a \
+-p password \
+-apt &quot;http://deb.debian.org/debian/debian&quot; \
+--ip-addr 10.0.0.2 \
+--ip-mask 255.255.255.0 \
+--ip-gate 10.0.0.1
+</code></pre><ul>
 <li>9 就是debian9</li>
 <li>password 就是密码</li>
 </ul>
