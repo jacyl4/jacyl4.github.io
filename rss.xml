@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sun, 31 May 2020 19:40:28 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sun, 31 May 2020 20:12:42 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -203,23 +203,4 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 </ul>
 <p>更多疑问</p>
 <p><a href="https://t.me/de_GWD"><img src="https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg" alt="Telegram"></a></p>
-]]></description><category domain="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/">路由</category><category domain="https://jacyl4.github.io/tags/de_gwd/">de_GWD</category><category domain="https://jacyl4.github.io/tags/%E6%97%81%E8%B7%AF/">旁路</category></item><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
-<blockquote>
-<p><a href="https://justhost.ru/?ref=1495">https://justhost.ru/?ref=1495</a></p>
-</blockquote>
-<p>俄罗斯 justhost</p>
-<p>dataline, Moscow 机房</p>
-<blockquote>
-<p>CPU：1核 <br>
-内存：512mb <br>
-硬盘：5g</p>
-<p>带宽：200mbps <br>
-流量：无限流量 <br>
-线路：电信移动cn2直连</p>
-</blockquote>
-<p>年付默认八折 <br>
-月付八折优惠码 <code>LET20</code> (若可用)  <br>
-八折后 87卢布/月 <br>
-paypal 相比 支付宝 汇率略低。</p>
-<p>高可用</p>
-]]></description><category domain="https://jacyl4.github.io/categories/vps/">VPS</category><category domain="https://jacyl4.github.io/tags/cn2/">cn2</category></item></channel></rss>
+]]></description><category domain="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/">路由</category><category domain="https://jacyl4.github.io/tags/de_gwd/">de_GWD</category><category domain="https://jacyl4.github.io/tags/%E6%97%81%E8%B7%AF/">旁路</category></item></channel></rss>
