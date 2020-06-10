@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 10 Jun 2020 02:52:22 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jun 2020 04:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 10 Jun 2020 02:55:13 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jun 2020 04:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
 <blockquote>
 <p><a href="https://justhost.ru/?ref=1495">https://justhost.ru/?ref=1495</a></p>
 </blockquote>
@@ -209,7 +209,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>直接联网安装，不需要挂代理。</p>
 <p>选项2，可以用来强制重置pihole密码。</p>
 <p>装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
-<p>有公网ip的话，可以选项8安装wireguard组件。</p>
+<p>有公网ip的话，可以选项3安装wireguard组件。</p>
 <p>wireguard组件，在每次debian内核更新后，需要重新编译安装。</p>
 <ul>
 <li>
