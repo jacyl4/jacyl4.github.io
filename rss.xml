@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 10 Jun 2020 11:04:15 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jun 2020 04:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 10 Jun 2020 11:04:38 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jun 2020 04:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
 <blockquote>
 <p><a href="https://justhost.ru/?ref=1495">https://justhost.ru/?ref=1495</a></p>
 </blockquote>
@@ -30,7 +30,7 @@ paypal 相比 支付宝 汇率略低。</p>
 <pre><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \
 -d 9 -v amd64 -a \
 -p password \
---mirror &quot;http://mirrors.aliyun.com/debian&quot; \
+--mirror &quot;http://mirrors.aliyun.com/debian/&quot; \
 --ip-addr 192.168.1.2 \
 --ip-mask 255.255.255.0 \
 --ip-gate 192.168.1.1
@@ -38,7 +38,7 @@ paypal 相比 支付宝 汇率略低。</p>
 <pre><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/1.1.1.1/') \
 -d 9 -v amd64 -a \
 -p password \
--apt &quot;http://deb.debian.org/debian&quot; \
+-apt &quot;http://deb.debian.org/debian/&quot; \
 --ip-addr 10.0.0.2 \
 --ip-mask 255.255.255.0 \
 --ip-gate 10.0.0.1
