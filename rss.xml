@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 03 Jun 2020 15:51:06 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jun 2020 04:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.72.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Wed, 10 Jun 2020 02:52:22 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>justhost 俄罗斯VPS cn2</title><link>https://jacyl4.github.io/posts/vps-justhost/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/vps-justhost/</guid><pubDate>Mon, 01 Jun 2020 04:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p>AFF</p>
 <blockquote>
 <p><a href="https://justhost.ru/?ref=1495">https://justhost.ru/?ref=1495</a></p>
 </blockquote>
@@ -181,14 +181,13 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>de_GWD(Debian bypass Gateway &amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。</p>
 <p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
-<p><img src="https://i.loli.net/2020/04/28/GrEYR3LJ51sDA9Q.png" alt="Snipaste_2020-04-28_19-05-37.png">
-内网设备分流ip，用空格分隔。 <br>
-只有一个doh地址的时候，doh1跟doh2填同一个地址。</p>
+<p><img src="https://i.loli.net/2020/06/10/drOsxTFckb4who2.png" alt="de_gwd">
+只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。</p>
 <h1 id="部署">部署</h1>
 <p>提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。</p>
 <p><img src="https://i.loli.net/2019/04/04/5ca5beea00c91.png" alt="dns record"></p>
 <h2 id="服务端">服务端</h2>
-<p><img src="https://i.loli.net/2020/05/12/bKfZG3BXWJ9wjD1.png" alt="Snipaste_2020-05-12_01-01-12.png"></p>
+<p><img src="https://i.loli.net/2020/06/10/qWVbimIha9s1UeJ.png" alt="server"></p>
 <p>提前准备好域名，做好a记录。</p>
 <p>脚本结束会自动打印出doh，域名，uuid，path等信息。/ 或者用选项11来复查</p>
 <p>服务端默认有自动更新功能，间歇查询github上的版本号，与本地比对，不一致后会自动生成计划任务，+8 凌晨4点30开始自动更新（pihole组件除外）</p>
@@ -201,9 +200,9 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <a href="https://www.uuidgenerator.net/">在线生成UUID</a></p>
 <h2 id="客户端">客户端</h2>
 <p>General Edition (amd64)
-<img src="https://i.loli.net/2020/05/12/EdTgwehSUJGpLaB.png" alt="Snipaste_2020-05-12_00-58-45.png"></p>
+<img src="https://i.loli.net/2020/06/10/F1mkOphUEBTgxVr.png" alt="client_do"></p>
 <p>Compatible Edition (amd64&amp;arm64)
-<img src="https://i.loli.net/2020/05/12/SYc8MIi3pzTWDla.png" alt="Snipaste_2020-05-12_00-59-03.png"></p>
+<img src="https://i.loli.net/2020/06/10/iJ2vKInt8VNBWYz.png" alt="client"></p>
 <p>需要以root用户安装</p>
 <p>通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。如果x86 cpu比较落后，不能运行docker，那也只能选第二个版本。</p>
 <p>首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。</p>
