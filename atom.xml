@@ -1,4 +1,211 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">路由</subtitle><updated>2020-06-18T06:42:32+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.72.0">Hugo</generator><entry><title type="text">justhost 俄罗斯VPS cn2</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/vps-justhost/"/><id>https://jacyl4.github.io/posts/vps-justhost/</id><updated>2020-06-18T14:42:12+08:00</updated><published>2020-06-01T04:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">AFF https://justhost.ru/?ref=1495 俄罗斯 justhost dataline, Moscow 机房 CPU：1核 内存：512mb 硬盘：5g 带宽：200mbps 流量：无限流量 线路：电信移动cn2直连 年付默认八折 月付八折优惠码 LET20 (若可用) 八折后 87卢布/月 paypal 相比 支付宝 汇率略低。 高可用</summary><content type="html"><![CDATA[<p>AFF</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">路由</subtitle><updated>2020-06-28T11:15:44+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.73.0">Hugo</generator><entry><title type="text">Jellyfin 影库 JAV 刮削</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/"/><id>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</id><updated>2020-06-28T19:15:19+08:00</updated><published>2020-06-28T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">预先规划好IP地址 NAS IP: 10.0.0.4 Jellyfin IP: 10.0.0.6 我JAV的文件在群晖的 /volume1/Transmission/JAV 文件夹下 登录群晖，开启群晖的nfs共享。 控制面板--文件服务， 最底下， NFS 控制面板--共享文件夹， 编辑共享文件夹， NFS权限 选项卡， 搭建Jellyfin 通过nfs连接nas存储 群晖上设定n……</summary><content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/06/28/WaCJigMLxqADU2v.jpg" alt="gallery1.jpg"></p>
+<h4 id="预先规划好ip地址">预先规划好IP地址</h4>
+<p>NAS IP: 10.0.0.4 <br>
+Jellyfin IP: 10.0.0.6</p>
+<p>我JAV的文件在群晖的 <code>/volume1/Transmission/JAV</code> 文件夹下</p>
+<h4 id="登录群晖开启群晖的nfs共享">登录群晖，开启群晖的nfs共享。</h4>
+<p>控制面板--文件服务， 最底下， NFS</p>
+<img src="https://i.loli.net/2020/06/28/6ytReTVlPpmi5Jo.png" width="450">
+<p>控制面板--共享文件夹， 编辑共享文件夹， NFS权限 选项卡，</p>
+<img src="https://i.loli.net/2020/06/28/pAtg6UMTGFSfjXP.png" width="450">
+<h2 id="搭建jellyfin">搭建Jellyfin</h2>
+<h4 id="通过nfs连接nas存储">通过nfs连接nas存储</h4>
+<p>群晖上设定nfs共享</p>
+<p>ssh登录jellyfin所在的 pve lxc debian 容器，把群晖里的Transmission文件夹挂载到 pve lxc debian容器的 <code>/anas</code></p>
+<pre><code>mkdir -p /anas
+cat &lt;&lt; EOF &gt;/etc/fstab
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+10.0.0.4:/volume1/Transmission /anas nfs nfsvers=3,hard,timeo=600,retrans=2,noatime,nodiratime,_netdev 0 0
+EOF
+systemctl daemon-reload
+</code></pre><h4 id="apt安装jellyfin">APT安装Jellyfin</h4>
+<pre><code>apt install apt-transport-https gnupg2
+wget -O - https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | apt-key add -
+echo &quot;deb [arch=$(dpkg --print-architecture)] https://repo.jellyfin.org/debian $(cat /etc/os-release | grep VERSION= | cut -d'(' -f2 | cut -d')' -f1) main&quot; &gt; /etc/apt/sources.list.d/jellyfin.list
+
+apt update
+apt install jellyfin ffmpeg nginx
+
+usermod -aG postfix jellyfin 
+systemctl restart jellyfin
+
+chmod -R 755 /anas
+chown -R jellyfin:jellyfin /anas
+
+reboot
+</code></pre><p>至此，已经可以用 Jellyfin IP: <code>10.0.0.6:8096</code> 通过浏览器来访问jellyfin了。</p>
+<h4 id="通过-av_data_capture-分类整理-jav-文件夹">通过 AV_Data_Capture 分类整理 JAV 文件夹</h4>
+<p><a href="https://github.com/yoshiko2/AV_Data_Capture/releases">https://github.com/yoshiko2/AV_Data_Capture/releases</a></p>
+<p>就两个文件需要用的。AV_Data_Capture和config.ini <br>
+登录pve lxc debian jellyfin, 进入挂载过的JAV文件夹，放入这两个文件</p>
+<p>编辑config.ini</p>
+<pre><code>[common]
+main_mode=2
+failed_output_folder=failed
+success_output_folder=JAV_output
+soft_link=0
+
+[proxy]
+;proxytype: http or socks5
+type=http
+proxy=
+timeout=10
+retry=3
+
+[Name_Rule]
+location_rule=actor+'/'+'['+year+'] '+number
+naming_rule=number+'-'+title
+
+[update]
+update_check=1
+
+[priority]
+website=javbus,javdb,fanza,xcity,mgstage,fc2,avsox,jav321,javlib
+
+[escape]
+literals=\()/
+folders=failed,JAV_output
+
+[debug_mode]
+switch=0
+</code></pre><p>在这个JAV文件夹路径下，<code>./AV_Data_Capture</code> 就开始移动整理视频文件了。最后整理好的文件会排放在JAV_output这个文件夹内，工具会生成这个文件夹的。</p>
+<ul>
+<li>（小技巧，一次整理的时候少放些，出错的时候好手动排查）</li>
+</ul>
+<h4 id="手动添加-jellyfin-javscraper-插件来获取jav封面之类的信息">手动添加 Jellyfin JavScraper 插件，来获取JAV封面之类的信息</h4>
+<p><a href="https://github.com/JavScraper/Emby.Plugins.JavScraper/releases">https://github.com/JavScraper/Emby.Plugins.JavScraper/releases</a></p>
+<p>下载，解压后得到 <code>JavScraper.dll</code> , 直接丢进 pve lxc debian jellyfin 的 <code>/var/lib/jellyfin/plugins</code></p>
+<pre><code>chmod 644 /var/lib/jellyfin/plugins/JavScraper.dll
+chown jellyfin:jellyfin /var/lib/jellyfin/plugins/JavScraper.dll
+</code></pre><h4 id="为-jellyfin-添加-jav-媒体库">为 Jellyfin 添加 JAV 媒体库</h4>
+<p>内容类型 为 电影</p>
+<p>Movie 元数据下载器 只需要 勾选 JavScraper
+Movie 图片获取程序 也只需要勾选 JavScraper</p>
+<p>然后就开始自动扫描装载媒体库了。</p>
+<h2 id="配置jellyfin-https-访问-可选">配置Jellyfin https 访问 （可选）</h2>
+<p>由于上面已经通过 apt 安装过 nginx 了。下面直接给nginx写配置就行了</p>
+<pre><code>rm -rf /etc/nginx/nginx.conf
+cat &lt;&lt; EOF &gt; /etc/nginx/nginx.conf
+user  www-data www-data;
+pid   /run/nginx.pid;
+
+worker_processes auto;
+worker_rlimit_nofile 100000;
+
+events {
+    worker_connections  100000;
+    multi_accept on;
+    use epoll;
+}
+
+http {
+  include mime.types;
+  default_type application/octet-stream;
+
+  fastcgi_connect_timeout 300;
+  fastcgi_send_timeout 300;
+  fastcgi_read_timeout 300;
+  fastcgi_buffer_size 64k;
+  fastcgi_buffers 64 4k;
+  fastcgi_busy_buffers_size 128k;
+  fastcgi_temp_file_write_size 128k;
+  fastcgi_intercept_errors on;
+
+  server_tokens             off;
+  sendfile                  on;
+  tcp_nodelay               on;
+  tcp_nopush                on;
+  keepalive_timeout         60;
+  client_header_timeout     60;
+  client_body_timeout       60;
+  reset_timedout_connection on;
+  types_hash_max_size       2048;
+
+  gzip                      on;
+  gzip_disable              &quot;MSIE [1-6]\.&quot;;
+  gzip_vary                 on;
+  gzip_proxied              any;
+  gzip_comp_level           4;
+  gzip_min_length           256;
+  gzip_buffers              16 8k;
+  gzip_http_version         1.0;
+  gzip_types    text/plain
+                text/javascript
+                text/css
+                text/js
+                text/xml
+                text/x-component
+                text/x-json
+                font/opentype
+                application/x-font-ttf
+                application/javascript
+                application/x-javascript
+                application/x-web-app-manifest+json
+                application/json
+                application/atom+xml
+                application/xml
+                application/xml+rss
+                application/xhtml+xml
+                application/vnd.ms-fontobject
+                image/svg+xml
+                image/x-icon;
+
+
+  access_log off;
+  error_log off;
+
+  include /etc/nginx/conf.d/*.conf;
+}
+EOF
+</code></pre><pre><code>rm -rf /etc/nginx/conf.d/default.conf
+cat &lt;&lt; EOF &gt; /etc/nginx/conf.d/default.conf
+server {
+  listen 8097 ssl http2;
+  server_name 域名;
+
+  ssl_certificate /var/www/ssl/域名.cer;
+  ssl_certificate_key /var/www/ssl/域名.key;
+  ssl_protocols TLSv1.2 TLSv1.3;
+  ssl_prefer_server_ciphers on;
+  ssl_ciphers TLS13+AESGCM+AES128:TLS13+AESGCM+AES256:TLS13+CHACHA20:EECDH+ECDSA+AESGCM+AES128:EECDH+ECDSA+CHACHA20:EECDH+ECDSA+AESGCM+AES256:EECDH+ECDSA+AES128+SHA:EECDH+ECDSA+AES256+SHA:EECDH+aRSA+AESGCM+AES128:EECDH+aRSA+CHACHA20:EECDH+aRSA+AESGCM+AES256:EECDH+aRSA+AES128+SHA:EECDH+aRSA+AES256+SHA:RSA+AES128+SHA:RSA+AES256+SHA:RSA+3DES;
+  ssl_session_timeout 10m;
+  ssl_session_cache builtin:1000 shared:SSL:10m;
+  ssl_buffer_size 4k;
+
+  add_header X-Frame-Options &quot;SAMEORIGIN&quot;;
+  add_header Referrer-Policy &quot;no-referrer&quot; always;
+  add_header X-Content-Type-Options &quot;nosniff&quot; always;
+  add_header X-Download-Options &quot;noopen&quot; always;
+  add_header X-Frame-Options &quot;SAMEORIGIN&quot; always;
+  add_header X-Permitted-Cross-Domain-Policies &quot;none&quot; always;
+  add_header X-Robots-Tag &quot;none&quot; always;
+  add_header X-XSS-Protection &quot;1; mode=block&quot; always;
+  add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+
+location / {
+  proxy_pass                http://127.0.0.1:8096;
+  proxy_set_header Host \$host;
+  proxy_set_header X-Real-IP \$remote_addr;
+  proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto \$scheme;
+  proxy_set_header X-Forwarded-Protocol \$scheme;
+  proxy_set_header X-Forwarded-Host \$http_host;
+  proxy_connect_timeout     432000;
+  proxy_send_timeout        432000;
+  proxy_read_timeout        432000;
+  proxy_redirect            off;
+  proxy_buffering           off;
+  proxy_buffer_size         4k;
+}
+}
+EOF
+</code></pre><ul>
+<li>应用上面命令前，替换好域名字样为真正自己使用的域名。</li>
+<li>提前放好ssl证书文件，路径我习惯 <code>/var/www/ssl</code> 域名.cer 和 域名.key 两个文件。（证书文件，一般情况下是 600 ）</li>
+<li>8096是jellyfin默认的web访问的端口。</li>
+<li>8097是设置给nginx的https端口，平时通过 https://域名:8097 来访问jellyfin。</li>
+</ul>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/pve/" term="pve" label="pve"/><category scheme="https://jacyl4.github.io/tags/lxc/" term="lxc" label="lxc"/><category scheme="https://jacyl4.github.io/tags/jellyfin/" term="jellyfin" label="jellyfin"/><category scheme="https://jacyl4.github.io/tags/scraper/" term="scraper" label="scraper"/></entry><entry><title type="text">justhost 俄罗斯VPS cn2</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/vps-justhost/"/><id>https://jacyl4.github.io/posts/vps-justhost/</id><updated>2020-06-28T19:15:19+08:00</updated><published>2020-06-01T04:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">AFF https://justhost.ru/?ref=1495 俄罗斯 justhost dataline, Moscow 机房 CPU：1核 内存：512mb 硬盘：5g 带宽：200mbps 流量：无限流量 线路：电信移动cn2直连 年付默认八折 月付八折优惠码 LET20 (若可用) 八折后 87卢布/月 paypal 相比 支付宝 汇率略低。 高可用</summary><content type="html"><![CDATA[<p>AFF</p>
 <blockquote>
 <p><a href="https://justhost.ru/?ref=1495">https://justhost.ru/?ref=1495</a></p>
 </blockquote>
@@ -17,7 +224,7 @@
 八折后 87卢布/月 <br>
 paypal 相比 支付宝 汇率略低。</p>
 <p>高可用</p>
-]]></content><category scheme="https://jacyl4.github.io/categories/vps/" term="VPS" label="VPS"/><category scheme="https://jacyl4.github.io/tags/cn2/" term="cn2" label="cn2"/></entry><entry><title type="text">给国外/国内虚拟机DD debian 系统</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/dd_debian/"/><id>https://jacyl4.github.io/posts/dd_debian/</id><updated>2020-06-18T14:42:12+08:00</updated><published>2020-05-27T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">查看虚拟机的ip跟其上级ip ip route show 把查到的ip填入最下面的dd命令里。 安装DD运行所需的依赖 当前系统为centos时 yum install -y xz openssl gawk file 当前系统为debian时 apt install -y xz-utils openssl gawk file DD命令 国内 bash &amp;lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \ -d 9 -v amd64 -a \ -p password \ --mirror &amp;quot;http://mirrors.aliyun.com/debian/&amp;quot; \ --ip-addr 192.168.1.2 \ --ip-mask 255.255.255.0 \ --ip-gate 192.168.1.1 国……</summary><content type="html"><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+]]></content><category scheme="https://jacyl4.github.io/categories/vps/" term="VPS" label="VPS"/><category scheme="https://jacyl4.github.io/tags/cn2/" term="cn2" label="cn2"/></entry><entry><title type="text">给国外/国内虚拟机DD debian 系统</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/dd_debian/"/><id>https://jacyl4.github.io/posts/dd_debian/</id><updated>2020-06-28T19:15:19+08:00</updated><published>2020-05-27T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">查看虚拟机的ip跟其上级ip ip route show 把查到的ip填入最下面的dd命令里。 安装DD运行所需的依赖 当前系统为centos时 yum install -y xz openssl gawk file 当前系统为debian时 apt install -y xz-utils openssl gawk file DD命令 国内 bash &amp;lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \ -d 9 -v amd64 -a \ -p password \ --mirror &amp;quot;http://mirrors.aliyun.com/debian/&amp;quot; \ --ip-addr 192.168.1.2 \ --ip-mask 255.255.255.0 \ --ip-gate 192.168.1.1 国……</summary><content type="html"><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -46,7 +253,7 @@ paypal 相比 支付宝 汇率略低。</p>
 <li>9 就是debian9</li>
 <li>password 就是密码</li>
 </ul>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/dd/" term="DD" label="DD"/></entry><entry><title type="text">终端内用于查看网络情况的指令</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/shell_net_test/"/><id>https://jacyl4.github.io/posts/shell_net_test/</id><updated>2020-06-18T14:42:12+08:00</updated><published>2020-05-09T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[列出适配器名称 ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq 查看端口占用 netstat -anp|grep 5390 或 lsof -i:5390 查看进程pid ps -ef | grep nginx 根据pid查看端口占用 netstat -nap | grep 10191 查看连接数 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;t&quot;,state[key]}' 查看tcpfastopen grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92 | column -t 入口流量信息统计GB (ens18) echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if……]]></summary><content type="html"><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/dd/" term="DD" label="DD"/></entry><entry><title type="text">终端内用于查看网络情况的指令</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/shell_net_test/"/><id>https://jacyl4.github.io/posts/shell_net_test/</id><updated>2020-06-28T19:15:19+08:00</updated><published>2020-05-09T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[列出适配器名称 ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq 查看端口占用 netstat -anp|grep 5390 或 lsof -i:5390 查看进程pid ps -ef | grep nginx 根据pid查看端口占用 netstat -nap | grep 10191 查看连接数 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;t&quot;,state[key]}' 查看tcpfastopen grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92 | column -t 入口流量信息统计GB (ens18) echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if……]]></summary><content type="html"><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
 <p><code>ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq</code></p>
 <h4 id="查看端口占用">查看端口占用</h4>
 <p><code>netstat -anp|grep 5390</code></p>
@@ -64,7 +271,7 @@ paypal 相比 支付宝 汇率略低。</p>
 <p><code>echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if ($0 ~eth){print $3,$11}}' /proc/net/dev | awk '{print $1}') /1024 /1024 /1024&quot; | bc</code></p>
 <h4 id="出口流量信息统计gb-ens18">出口流量信息统计GB (ens18)</h4>
 <p><code>echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if ($0 ~eth){print $3,$11}}' /proc/net/dev | awk '{print $2}') /1024 /1024 /1024&quot; | bc</code></p>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/shell/" term="shell" label="shell"/></entry><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2020-06-18T14:42:12+08:00</updated><published>2020-04-22T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。 /interface vrrp add name=vrrp1 interface=eth1 vrid=1 /interface vrrp add name=vrrp2……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/shell/" term="shell" label="shell"/></entry><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2020-06-28T19:15:19+08:00</updated><published>2020-04-22T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。 /interface vrrp add name=vrrp1 interface=eth1 vrid=1 /interface vrrp add name=vrrp2……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
@@ -177,7 +384,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routin
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 routing-mark=CMCC1
 </code></pre><h1 id="乖巧--v-thx">乖巧 ☆⌒(*＾-゜)v THX!!</h1>
 <img src="https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png" width="260" alt="给个赏吧">
-]]></content><category scheme="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/" term="路由" label="路由"/><category scheme="https://jacyl4.github.io/tags/ros/" term="ros" label="ros"/><category scheme="https://jacyl4.github.io/tags/%E5%88%86%E6%B5%81/" term="分流" label="分流"/></entry><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-06-18T14:42:12+08:00</updated><published>2019-03-26T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian bypass Gateway &amp;amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。 DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。 只……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
+]]></content><category scheme="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/" term="路由" label="路由"/><category scheme="https://jacyl4.github.io/tags/ros/" term="ros" label="ros"/><category scheme="https://jacyl4.github.io/tags/%E5%88%86%E6%B5%81/" term="分流" label="分流"/></entry><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-06-28T19:15:19+08:00</updated><published>2019-03-26T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian bypass Gateway &amp;amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。 DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。 需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。 只……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
 <p>de_GWD(Debian bypass Gateway &amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。</p>
 <p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
