@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sun, 28 Jun 2020 11:25:37 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sun, 28 Jun 2020 13:34:13 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
 <h4 id="环境准备">环境准备</h4>
-<p>预先规划好IP地址
+<p>预先规划好IP地址 <br>
 NAS IP: 10.0.0.4 <br>
 Jellyfin IP: 10.0.0.6</p>
 <p>我JAV的文件在群晖的 <code>/volume1/Transmission/JAV</code> 文件夹下</p>
@@ -14,7 +14,6 @@ Jellyfin IP: 10.0.0.6</p>
 <img src="https://i.loli.net/2020/06/28/pAtg6UMTGFSfjXP.png" width="450">
 <h2 id="搭建jellyfin">搭建Jellyfin</h2>
 <h4 id="通过nfs连接nas存储">通过nfs连接nas存储</h4>
-<p>群晖上设定nfs共享</p>
 <p>ssh登录jellyfin所在的 pve lxc debian 容器，把群晖里的Transmission文件夹挂载到 pve lxc debian容器的 <code>/anas</code></p>
 <pre><code>mkdir -p /anas
 cat &lt;&lt; EOF &gt;/etc/fstab
