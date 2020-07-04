@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sat, 04 Jul 2020 18:24:06 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sat, 04 Jul 2020 18:26:03 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
 <h4 id="环境准备">环境准备</h4>
 <p>预先规划好IP地址 <br>
 NAS IP: 10.0.0.4 <br>
@@ -437,7 +437,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>需要大陆服务器，或者nat机，提前确认好服务端端口</p>
 </li>
 <li>
-<p>Bind-Port即de_GWD 到 大陆服务器 之前建立链接进行内网穿透的端口</p>
+<p>Bind-Port即de_GWD 到 大陆服务器 之前建立连接进行内网穿透的端口</p>
 </li>
 <li>
 <p>Bind-Port，服务器端口，本地端口，可以为同一个，但是确认好tcp或udp</p>
