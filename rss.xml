@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Tue, 07 Jul 2020 18:18:04 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 09 Jul 2020 08:17:09 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
 <h4 id="环境准备">环境准备</h4>
 <p>预先规划好IP地址 <br>
 NAS IP: 10.0.0.4 <br>
@@ -392,22 +392,29 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>双端配合，其于linux debian，特调tcp参数，可以从内核层面，略微提升连接性能。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
 <p><img src="https://i.loli.net/2020/07/08/5Zgr29H4TR7WCtQ.png" alt="de_gwd"></p>
-<p>只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。</p>
+<ul>
+<li>只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。</li>
+</ul>
 <h1 id="部署">部署</h1>
 <p>提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。</p>
 <p><img src="https://i.loli.net/2019/04/04/5ca5beea00c91.png" alt="dns record"></p>
 <h2 id="服务端">服务端</h2>
 <p><img src="https://i.loli.net/2020/06/10/qWVbimIha9s1UeJ.png" alt="server"></p>
-<p>提前准备好域名，做好a记录。</p>
-<p>脚本结束会自动打印出doh，域名，uuid，path等信息。/ 或者用选项11来复查</p>
+<p>脚本结束会自动打印出doh，域名，uuid，path等信息。或者用 选项11 来复查</p>
 <p>服务端默认有自动更新功能，间歇查询github上的版本号，与本地比对，不一致后会自动生成计划任务，+8 凌晨4点30开始自动更新（pihole组件除外）</p>
+<ul>
+<li>
 <p>nginx配置方面，如需要vps上同时运行wordpress nextcloud等程序。</p>
-<p>/etc/nginx/conf.d</p>
-<p>supp_head 用于存放nginx upstream模块的内容</p>
-<p>supp_body 用于存放wordpress nextcloud等程序的伪静态内容</p>
-<p>然后，平常更新时就可以共存了。</p>
-<p>附：
-<a href="https://www.uuidgenerator.net/">在线生成UUID</a></p>
+<pre><code>/etc/nginx/conf.d    
+
+supp_head 用于存放nginx upstream模块的内容    
+
+supp_body 用于存放wordpress nextcloud等程序的伪静态内容    
+
+然后，平常更新时就可以共存了。    
+</code></pre>
+</li>
+</ul>
 <h2 id="客户端">客户端</h2>
 <p>General Edition (amd64)
 <img src="https://i.loli.net/2020/06/10/F1mkOphUEBTgxVr.png" alt="client_do"></p>
@@ -415,12 +422,12 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <img src="https://i.loli.net/2020/06/10/iJ2vKInt8VNBWYz.png" alt="client"></p>
 <p>需要以root用户安装</p>
 <p>通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。如果x86 cpu比较落后，不能运行docker，那也只能选第二个版本。</p>
-<p>首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。</p>
+<p>首次安装时，确保debian能正常获取ip联网。</p>
 <p>直接联网安装，不需要挂代理。</p>
-<p>选项2，可以用来强制重置pihole密码。</p>
-<p>装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
-<p>有公网ip的话，可以选项3安装wireguard组件。</p>
-<p>wireguard组件，在每次debian内核更新后，需要重新编译安装。</p>
+<ul>
+<li>选项2，可以用来强制重置de_GWD与pihole密码。</li>
+</ul>
+<p>装完后，建议关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
 <ul>
 <li>
 <p>自动每二小时校时</p>
@@ -429,7 +436,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>自动每天凌晨更新分流规则</p>
 </li>
 <li>
-<p>组件通过install按钮安装后，刷新页面显示选型</p>
+<p>组件通过install按钮安装后，刷新页面显示选项（页面能看到选项 即表示 组件已装上）</p>
 <ul>
 <li>frp
 <ul>
@@ -457,6 +464,9 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p>更新出错时，可以点web ui上的救援按钮，再次进行更新。</p>
 </li>
 </ul>
 <p>更多疑问</p>

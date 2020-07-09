@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">路由</subtitle><updated>2020-07-07T18:18:04+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.73.0">Hugo</generator><entry><title type="text">Jellyfin 影库 JAV 刮削</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/"/><id>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</id><updated>2020-07-08T02:17:43+08:00</updated><published>2020-06-28T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">环境准备 预先规划好IP地址 NAS IP: 10.0.0.4 Jellyfin IP: 10.0.0.6 我JAV的文件在群晖的 /volume1/Transmission/JAV 文件夹下 在 PVE 上， 新建个 debian 的 lxc 容器 新建lxc容器的时候，Unprivileged container: 不需要勾选 运行容器前，点击 即将要安装 Jellyfin 的容器， options， 编辑最后一个选项 Features ，勾上NFS。 登录……</summary><content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">路由</subtitle><updated>2020-07-09T08:17:09+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.73.0">Hugo</generator><entry><title type="text">Jellyfin 影库 JAV 刮削</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/"/><id>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</id><updated>2020-07-09T16:16:45+08:00</updated><published>2020-06-28T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">环境准备 预先规划好IP地址 NAS IP: 10.0.0.4 Jellyfin IP: 10.0.0.6 我JAV的文件在群晖的 /volume1/Transmission/JAV 文件夹下 在 PVE 上， 新建个 debian 的 lxc 容器 新建lxc容器的时候，Unprivileged container: 不需要勾选 运行容器前，点击 即将要安装 Jellyfin 的容器， options， 编辑最后一个选项 Features ，勾上NFS。 登录……</summary><content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
 <h4 id="环境准备">环境准备</h4>
 <p>预先规划好IP地址 <br>
 NAS IP: 10.0.0.4 <br>
@@ -207,7 +207,7 @@ EOF
 <li>8096是jellyfin默认的web访问的端口。</li>
 <li>8097是设置给nginx的https端口，平时通过 https://域名:8097 来访问jellyfin。</li>
 </ul>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/pve/" term="pve" label="pve"/><category scheme="https://jacyl4.github.io/tags/lxc/" term="lxc" label="lxc"/><category scheme="https://jacyl4.github.io/tags/jellyfin/" term="jellyfin" label="jellyfin"/><category scheme="https://jacyl4.github.io/tags/scraper/" term="scraper" label="scraper"/></entry><entry><title type="text">justhost 俄罗斯VPS cn2</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/vps-justhost/"/><id>https://jacyl4.github.io/posts/vps-justhost/</id><updated>2020-07-08T02:17:43+08:00</updated><published>2020-06-01T04:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">AFF https://justhost.ru/?ref=1495 俄罗斯 justhost dataline, Moscow 机房 CPU：1核 内存：512mb 硬盘：5g 带宽：200mbps 流量：无限流量 线路：电信移动cn2直连 年付默认八折 月付八折优惠码 LET20 (若可用) 八折后 87卢布/月 paypal 相比 支付宝 汇率略低。 高可用</summary><content type="html"><![CDATA[<p>AFF</p>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/pve/" term="pve" label="pve"/><category scheme="https://jacyl4.github.io/tags/lxc/" term="lxc" label="lxc"/><category scheme="https://jacyl4.github.io/tags/jellyfin/" term="jellyfin" label="jellyfin"/><category scheme="https://jacyl4.github.io/tags/scraper/" term="scraper" label="scraper"/></entry><entry><title type="text">justhost 俄罗斯VPS cn2</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/vps-justhost/"/><id>https://jacyl4.github.io/posts/vps-justhost/</id><updated>2020-07-09T16:16:45+08:00</updated><published>2020-06-01T04:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">AFF https://justhost.ru/?ref=1495 俄罗斯 justhost dataline, Moscow 机房 CPU：1核 内存：512mb 硬盘：5g 带宽：200mbps 流量：无限流量 线路：电信移动cn2直连 年付默认八折 月付八折优惠码 LET20 (若可用) 八折后 87卢布/月 paypal 相比 支付宝 汇率略低。 高可用</summary><content type="html"><![CDATA[<p>AFF</p>
 <blockquote>
 <p><a href="https://justhost.ru/?ref=1495">https://justhost.ru/?ref=1495</a></p>
 </blockquote>
@@ -226,7 +226,7 @@ EOF
 八折后 87卢布/月 <br>
 paypal 相比 支付宝 汇率略低。</p>
 <p>高可用</p>
-]]></content><category scheme="https://jacyl4.github.io/categories/vps/" term="VPS" label="VPS"/><category scheme="https://jacyl4.github.io/tags/cn2/" term="cn2" label="cn2"/></entry><entry><title type="text">给国外/国内虚拟机DD debian 系统</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/dd_debian/"/><id>https://jacyl4.github.io/posts/dd_debian/</id><updated>2020-07-08T02:17:43+08:00</updated><published>2020-05-27T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">查看虚拟机的ip跟其上级ip ip route show 把查到的ip填入最下面的dd命令里。 安装DD运行所需的依赖 当前系统为centos时 yum install -y xz openssl gawk file 当前系统为debian时 apt install -y xz-utils openssl gawk file DD命令 国内 bash &amp;lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \ -d 9 -v amd64 -a \ -p password \ --mirror &amp;quot;http://mirrors.aliyun.com/debian/&amp;quot; \ --ip-addr 192.168.1.2 \ --ip-mask 255.255.255.0 \ --ip-gate 192.168.1.1 国……</summary><content type="html"><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+]]></content><category scheme="https://jacyl4.github.io/categories/vps/" term="VPS" label="VPS"/><category scheme="https://jacyl4.github.io/tags/cn2/" term="cn2" label="cn2"/></entry><entry><title type="text">给国外/国内虚拟机DD debian 系统</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/dd_debian/"/><id>https://jacyl4.github.io/posts/dd_debian/</id><updated>2020-07-09T16:16:45+08:00</updated><published>2020-05-27T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">查看虚拟机的ip跟其上级ip ip route show 把查到的ip填入最下面的dd命令里。 安装DD运行所需的依赖 当前系统为centos时 yum install -y xz openssl gawk file 当前系统为debian时 apt install -y xz-utils openssl gawk file DD命令 国内 bash &amp;lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \ -d 9 -v amd64 -a \ -p password \ --mirror &amp;quot;http://mirrors.aliyun.com/debian/&amp;quot; \ --ip-addr 192.168.1.2 \ --ip-mask 255.255.255.0 \ --ip-gate 192.168.1.1 国……</summary><content type="html"><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -255,7 +255,7 @@ paypal 相比 支付宝 汇率略低。</p>
 <li>9 就是debian9</li>
 <li>password 就是密码</li>
 </ul>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/dd/" term="DD" label="DD"/></entry><entry><title type="text">终端内用于查看网络情况的指令</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/shell_net_test/"/><id>https://jacyl4.github.io/posts/shell_net_test/</id><updated>2020-07-08T02:17:43+08:00</updated><published>2020-05-09T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[列出适配器名称 ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq 查看端口占用 netstat -anp|grep 5390 或 lsof -i:5390 查看进程pid ps -ef | grep nginx 根据pid查看端口占用 netstat -nap | grep 10191 查看连接数 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;t&quot;,state[key]}' 查看tcpfastopen grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92 | column -t 入口流量信息统计GB (ens18) echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if……]]></summary><content type="html"><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/dd/" term="DD" label="DD"/></entry><entry><title type="text">终端内用于查看网络情况的指令</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/shell_net_test/"/><id>https://jacyl4.github.io/posts/shell_net_test/</id><updated>2020-07-09T16:16:45+08:00</updated><published>2020-05-09T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[列出适配器名称 ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq 查看端口占用 netstat -anp|grep 5390 或 lsof -i:5390 查看进程pid ps -ef | grep nginx 根据pid查看端口占用 netstat -nap | grep 10191 查看连接数 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;t&quot;,state[key]}' 查看tcpfastopen grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92 | column -t 入口流量信息统计GB (ens18) echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if……]]></summary><content type="html"><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
 <p><code>ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq</code></p>
 <h4 id="查看端口占用">查看端口占用</h4>
 <p><code>netstat -anp|grep 5390</code></p>
@@ -273,7 +273,7 @@ paypal 相比 支付宝 汇率略低。</p>
 <p><code>echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if ($0 ~eth){print $3,$11}}' /proc/net/dev | awk '{print $1}') /1024 /1024 /1024&quot; | bc</code></p>
 <h4 id="出口流量信息统计gb-ens18">出口流量信息统计GB (ens18)</h4>
 <p><code>echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if ($0 ~eth){print $3,$11}}' /proc/net/dev | awk '{print $2}') /1024 /1024 /1024&quot; | bc</code></p>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/shell/" term="shell" label="shell"/></entry><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2020-07-08T02:17:43+08:00</updated><published>2020-04-22T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。 /interface vrrp add name=vrrp1 interface=eth1 vrid=1 /interface vrrp add name=vrrp2……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/shell/" term="shell" label="shell"/></entry><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2020-07-09T16:16:45+08:00</updated><published>2020-04-22T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。 /interface vrrp add name=vrrp1 interface=eth1 vrid=1 /interface vrrp add name=vrrp2……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
@@ -386,28 +386,35 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=1 routin
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 routing-mark=CMCC1
 </code></pre><h1 id="乖巧--v-thx">乖巧 ☆⌒(*＾-゜)v THX!!</h1>
 <img src="https://i.loli.net/2020/04/22/EaMjS1J8yfrVv4N.png" width="260" alt="给个赏吧">
-]]></content><category scheme="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/" term="路由" label="路由"/><category scheme="https://jacyl4.github.io/tags/ros/" term="ros" label="ros"/><category scheme="https://jacyl4.github.io/tags/%E5%88%86%E6%B5%81/" term="分流" label="分流"/></entry><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-07-08T02:17:43+08:00</updated><published>2019-03-26T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian bypass Gateway &amp;amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。 DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。 双端配合，其于linux debian，特调tcp参数，可以从内核……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
+]]></content><category scheme="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/" term="路由" label="路由"/><category scheme="https://jacyl4.github.io/tags/ros/" term="ros" label="ros"/><category scheme="https://jacyl4.github.io/tags/%E5%88%86%E6%B5%81/" term="分流" label="分流"/></entry><entry><title type="text">de_GWD</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/de_gwd/"/><id>https://jacyl4.github.io/posts/de_gwd/</id><updated>2020-07-09T16:16:45+08:00</updated><published>2019-03-26T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Github de_GWD(Debian bypass Gateway &amp;amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。 DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。 双端配合，其于linux debian，特调tcp参数，可以从内核……</summary><content type="html"><![CDATA[<p><a href="https://github.com/jacyl4/de_GWD">Github</a></p>
 <p>de_GWD(Debian bypass Gateway &amp; DNS)专注旁路，运行于debian的一个完善套件，带界面，纯粹是为了追求更高效更极速。</p>
 <p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
 <p>双端配合，其于linux debian，特调tcp参数，可以从内核层面，略微提升连接性能。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
 <p><img src="https://i.loli.net/2020/07/08/5Zgr29H4TR7WCtQ.png" alt="de_gwd"></p>
-<p>只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。</p>
+<ul>
+<li>只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。</li>
+</ul>
 <h1 id="部署">部署</h1>
 <p>提前给自己的vps kvm 小机 准备好域名。哪怕是免费的只要能给cloudflare托管就行。二级域名不行。 脚本开始安装的时候，要制作证书的。</p>
 <p><img src="https://i.loli.net/2019/04/04/5ca5beea00c91.png" alt="dns record"></p>
 <h2 id="服务端">服务端</h2>
 <p><img src="https://i.loli.net/2020/06/10/qWVbimIha9s1UeJ.png" alt="server"></p>
-<p>提前准备好域名，做好a记录。</p>
-<p>脚本结束会自动打印出doh，域名，uuid，path等信息。/ 或者用选项11来复查</p>
+<p>脚本结束会自动打印出doh，域名，uuid，path等信息。或者用 选项11 来复查</p>
 <p>服务端默认有自动更新功能，间歇查询github上的版本号，与本地比对，不一致后会自动生成计划任务，+8 凌晨4点30开始自动更新（pihole组件除外）</p>
+<ul>
+<li>
 <p>nginx配置方面，如需要vps上同时运行wordpress nextcloud等程序。</p>
-<p>/etc/nginx/conf.d</p>
-<p>supp_head 用于存放nginx upstream模块的内容</p>
-<p>supp_body 用于存放wordpress nextcloud等程序的伪静态内容</p>
-<p>然后，平常更新时就可以共存了。</p>
-<p>附：
-<a href="https://www.uuidgenerator.net/">在线生成UUID</a></p>
+<pre><code>/etc/nginx/conf.d    
+
+supp_head 用于存放nginx upstream模块的内容    
+
+supp_body 用于存放wordpress nextcloud等程序的伪静态内容    
+
+然后，平常更新时就可以共存了。    
+</code></pre>
+</li>
+</ul>
 <h2 id="客户端">客户端</h2>
 <p>General Edition (amd64)
 <img src="https://i.loli.net/2020/06/10/F1mkOphUEBTgxVr.png" alt="client_do"></p>
@@ -415,12 +422,12 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <img src="https://i.loli.net/2020/06/10/iJ2vKInt8VNBWYz.png" alt="client"></p>
 <p>需要以root用户安装</p>
 <p>通常用第一个脚本，如果是armbian平台的话，才选第二个脚本。如果x86 cpu比较落后，不能运行docker，那也只能选第二个版本。</p>
-<p>首次安装前，先维持上级路由的dhcp是普通状态，确保debian能正常获取ip联网。</p>
+<p>首次安装时，确保debian能正常获取ip联网。</p>
 <p>直接联网安装，不需要挂代理。</p>
-<p>选项2，可以用来强制重置pihole密码。</p>
-<p>装完后，关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
-<p>有公网ip的话，可以选项3安装wireguard组件。</p>
-<p>wireguard组件，在每次debian内核更新后，需要重新编译安装。</p>
+<ul>
+<li>选项2，可以用来强制重置de_GWD与pihole密码。</li>
+</ul>
+<p>装完后，建议关闭上级路由的DHCP服务，在web UI上开启de_GWD的DHCP服务。</p>
 <ul>
 <li>
 <p>自动每二小时校时</p>
@@ -429,7 +436,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>自动每天凌晨更新分流规则</p>
 </li>
 <li>
-<p>组件通过install按钮安装后，刷新页面显示选型</p>
+<p>组件通过install按钮安装后，刷新页面显示选项（页面能看到选项 即表示 组件已装上）</p>
 <ul>
 <li>frp
 <ul>
@@ -457,6 +464,9 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 </ul>
 </li>
 </ul>
+</li>
+<li>
+<p>更新出错时，可以点web ui上的救援按钮，再次进行更新。</p>
 </li>
 </ul>
 <p>更多疑问</p>
