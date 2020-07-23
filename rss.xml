@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.73.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Sat, 11 Jul 2020 03:00:43 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.74.2 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 23 Jul 2020 14:40:26 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
 <h4 id="环境准备">环境准备</h4>
 <p>预先规划好IP地址 <br>
 NAS IP: 10.0.0.4 <br>
@@ -391,7 +391,7 @@ add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=1 rout
 <p>DNS去污染方式有别于以往各种，效率不是以往LEDE/梅林等兼容方案能比拟的。</p>
 <p>双端配合，其于linux debian，特调tcp参数，可以从内核层面，略微提升连接性能。</p>
 <p>需要64位，支持普通amd64平台 以及 树莓派，香橙派 等 arm64 平台。</p>
-<p><img src="https://i.loli.net/2020/07/08/5Zgr29H4TR7WCtQ.png" alt="de_gwd"></p>
+<p><img src="https://i.loli.net/2020/07/23/fP6uEHj2xZ7WVAd.png" alt="de_GWD"></p>
 <ul>
 <li>只有一个doh地址的时候，doh1跟doh2填同一个地址。不要留空。</li>
 </ul>
