@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.74.2 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 23 Jul 2020 14:40:26 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.74.3 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Fri, 24 Jul 2020 20:14:32 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Jellyfin 影库 JAV 刮削</title><link>https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/jellyfin_jav_capture_scraper/</guid><pubDate>Sun, 28 Jun 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<p><img src="https://i.loli.net/2020/06/28/wbysakCxvQHLnIe.jpg" alt="gallery1.jpg"></p>
 <h4 id="环境准备">环境准备</h4>
 <p>预先规划好IP地址 <br>
 NAS IP: 10.0.0.4 <br>
@@ -473,24 +473,6 @@ supp_body 用于存放wordpress nextcloud等程序的伪静态内容
 </li>
 </ul>
 <hr>
-<h2 id="扩展用法">扩展用法</h2>
-<ul>
-<li>
-<p>server服务端脚本支持以nat形式安装，自适应的。开启脚本要求输入域名时，以<code>aaa.bbb.com:12345</code>这种形式安装。会要求输入cloudflare api跟cloudflare email。完成安装后，客户端的节点域名就用<code>aaa.bbb.com:12345</code>直接填。</p>
-</li>
-<li>
-<p>client_do_fwd中转脚本，是在国内机器上装的。用于上级连de_GWD的服务端，下级连家中的de_GWD客户端</p>
-<ul>
-<li>提前确认好国内中转机器的端口</li>
-<li>开始安装前，运行<code>ip route</code>来获知中转机器的本机ip跟它的网关ip</li>
-<li>域名形式同样 <code>aaa.bbb.com:12345</code></li>
-<li>uuid跟path需手动输入，此时的uuid跟path是用于给家中de_GWD客户端连接用的</li>
-<li>随后会脚本自动会获取客户端脚本，再要求输入几行参数，就和安装de_GWD客户端一样。此时一开始需要输入的de_GWD本机ip跟上级网关ip就是上面<code>ip route</code>查询到的。</li>
-<li>装完后的中转机器上的web ui 访问地址为 <code>https://aaa.bbb.com:12345/gwd</code></li>
-<li>对于中转来说，de_GWD_fwd是庞大了些。但是所用的v2中转方式。每一程都是v2+ws+tls。且性能不用担心。</li>
-</ul>
-</li>
-</ul>
 <p>更多疑问</p>
 <p><a href="https://t.me/de_GWD"><img src="https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg" alt="Telegram"></a></p>
 ]]></description><category domain="https://jacyl4.github.io/categories/%E8%B7%AF%E7%94%B1/">路由</category><category domain="https://jacyl4.github.io/tags/de_gwd/">de_GWD</category><category domain="https://jacyl4.github.io/tags/%E6%97%81%E8%B7%AF/">旁路</category></item></channel></rss>
