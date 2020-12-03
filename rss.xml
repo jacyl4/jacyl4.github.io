@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.79.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 03 Dec 2020 11:57:53 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.79.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 03 Dec 2020 11:58:32 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -120,8 +120,8 @@ add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mar
 <p>111.111.111.111是搬瓦工vps ip，注释名称bwg，走电信线路</p>
 <p>222.222.222.222是CloudCone vps ip，注释名称cc，走移动线路</p>
 <pre><code>/ip firewall address-list
-add address=111.111.111.111 list=CTv2 comment=bwg cn2gia
-add address=222.222.222.222 list=CMv2 comment=azure HK
+add address=111.111.111.111 list=CTv2 comment=&quot;bwg cn2gia&quot;
+add address=222.222.222.222 list=CMv2 comment=&quot;azure HK&quot;
 </code></pre><pre><code>/ip firewall mangle
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-type=!local dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn1 comment=v2
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-type=!local dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn2
