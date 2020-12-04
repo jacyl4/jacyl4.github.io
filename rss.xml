@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.79.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 03 Dec 2020 11:59:49 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.79.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Fri, 04 Dec 2020 00:35:11 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>给国外/国内虚拟机DD debian 系统</title><link>https://jacyl4.github.io/posts/dd_debian/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/dd_debian/</guid><pubDate>Wed, 27 May 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -52,7 +52,7 @@
 <p>提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。</p>
 <pre><code>/interface vrrp add name=vrrp1 interface=eth1 vrid=1
 /interface vrrp add name=vrrp2 interface=eth1 vrid=2
-/interface vrrp add name=vrrp4 interface=eth2 vrid=3
+/interface vrrp add name=vrrp3 interface=eth2 vrid=3
 </code></pre><p>给端口们预先分配好ip，随自己的习惯分配好了，因为vrrp需要预设好ip才会显示已连接</p>
 <pre><code>/ip address add address=192.168.10.1/24 interface=eth1
 /ip address add address=192.168.20.1/24 interface=eth2
