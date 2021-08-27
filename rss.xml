@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Thu, 26 Aug 2021 21:48:32 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Debian 升级</title><link>https://jacyl4.github.io/posts/debian-upgrade/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/debian-upgrade/</guid><pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="一debian-9-升-10">一，Debian 9 升 10</h4>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>de_GWD</title><link>https://jacyl4.github.io/</link><description>路由</description><generator>Hugo 0.87.0 https://gohugo.io/</generator><language>zh-CN</language><managingEditor>jacyl4@gmail.com (JacyL4)</managingEditor><webMaster>jacyl4@gmail.com (JacyL4)</webMaster><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><lastBuildDate>Fri, 27 Aug 2021 12:56:10 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://jacyl4.github.io/rss.xml"/><item><title>Debian 升级</title><link>https://jacyl4.github.io/posts/debian-upgrade/</link><guid isPermaLink="true">https://jacyl4.github.io/posts/debian-upgrade/</guid><pubDate>Thu, 10 Dec 2020 00:00:00 +0800</pubDate><author>jacyl4@gmail.com (JacyL4)</author><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright><description><![CDATA[<h4 id="一debian-9-升-10">一，Debian 9 升 10</h4>
 <h5 id="国内">国内</h5>
 <pre><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
 deb http://mirrors.aliyun.com/debian buster main contrib non-free
@@ -11,7 +11,8 @@ deb http://deb.debian.org/debian buster main contrib non-free
 deb http://deb.debian.org/debian buster-updates main contrib non-free
 deb http://deb.debian.org/debian-security buster/updates main contrib non-free
 EOF
-</code></pre><pre><code>apt update &amp;&amp; apt -y full-upgrade
+</code></pre><pre><code>sed -i &quot;s/ stretch / buster /g&quot; /etc/apt/sources.list.d/*
+apt update &amp;&amp; apt -y full-upgrade
 apt -y --purge autoremove &amp;&amp; apt -y autoclean
 </code></pre><h4 id="二debian-10-升-11">二，Debian 10 升 11</h4>
 <h5 id="国内-1">国内</h5>
@@ -28,7 +29,8 @@ deb http://deb.debian.org/debian bullseye-updates main contrib non-free
 deb http://deb.debian.org/debian bullseye-backports main contrib non-free
 deb http://deb.debian.org/debian-security bullseye-security main contrib non-free
 EOF
-</code></pre><pre><code>apt update &amp;&amp; apt -y full-upgrade
+</code></pre><pre><code>sed -i &quot;s/ buster / bullseye /g&quot; /etc/apt/sources.list.d/*
+apt update &amp;&amp; apt -y full-upgrade
 apt -y --purge autoremove &amp;&amp; apt -y autoclean
 </code></pre><h4 id="三重启查看当前系统版本">三，重启查看当前系统版本</h4>
 <pre><code>reboot
