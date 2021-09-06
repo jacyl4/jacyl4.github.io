@@ -1,41 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">路由</subtitle><updated>2021-08-27T12:56:10+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator><entry><title type="text">Debian 升级</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/debian-upgrade/"/><id>https://jacyl4.github.io/posts/debian-upgrade/</id><updated>2021-08-27T20:55:52+08:00</updated><published>2020-12-10T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[一，Debian 9 升 10 国内 cat &lt;&lt; EOF &gt;/etc/apt/sources.list deb http://mirrors.aliyun.com/debian buster main contrib non-free deb http://mirrors.aliyun.com/debian buster-updates main contrib non-free deb http://mirrors.aliyun.com/debian-security buster/updates main contrib non-free EOF 国外 cat &lt;&lt; EOF &gt;/etc/apt/sources.list deb http://deb.debian.org/debian buster main contrib non-free deb http://deb.debian.org/debian buster-updates main contrib non-free deb http://deb.debian.org/debian-security buster/updates main contrib non-free EOF sed -i &quot;s/ stretch / buster /g&quot; /etc/apt/sources.list.d/* apt update &amp;&amp; apt -y full-upgrade apt -y --purge autoremove &amp;&amp; apt -y autoclean 二，Debian 10 升 11 国内 cat &lt;&lt; EOF &gt;/etc/apt/sources.list deb http://mirrors.aliyun.com/debian bullseye main contrib non-free deb http://mirrors.aliyun.com/debian bullseye-updates main contrib non-free deb http://mirrors.aliyun.com/debian bullseye-backports main contrib non-free deb http://mirrors.aliyun.com/debian-security……]]></summary><content type="html"><![CDATA[<h4 id="一debian-9-升-10">一，Debian 9 升 10</h4>
-<h5 id="国内">国内</h5>
-<pre><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
-deb http://mirrors.aliyun.com/debian buster main contrib non-free
-deb http://mirrors.aliyun.com/debian buster-updates main contrib non-free
-deb http://mirrors.aliyun.com/debian-security buster/updates main contrib non-free
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><title type="text">de_GWD</title><subtitle type="html">路由</subtitle><updated>2021-09-06T21:14:46+00:00</updated><id>https://jacyl4.github.io/</id><link rel="alternate" type="text/html" href="https://jacyl4.github.io/"/><link rel="self" type="application/atom+xml" href="https://jacyl4.github.io/atom.xml"/><author><name>JacyL4</name><uri>https://jacyl4.github.io/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><generator uri="https://gohugo.io/" version="0.88.1">Hugo</generator><entry><title type="text">Debian 升级</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/debian-upgrade/"/><id>https://jacyl4.github.io/posts/debian-upgrade/</id><updated>2021-09-07T05:14:29+08:00</updated><published>2020-12-10T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[一，Debian 9 升 10 cat &lt;&lt; EOF &gt;/etc/apt/sources.list deb http://cloudfront.debian.net/debian buster main contrib non-free deb http://cloudfront.debian.net/debian buster-updates main contrib non-free deb http://cloudfront.debian.net/debian-security buster/updates main contrib non-free EOF sed -i &quot;s/ stretch / buster /g&quot; /etc/apt/sources.list.d/* apt update &amp;&amp; apt -y full-upgrade apt -y --purge autoremove &amp;&amp; apt -y autoclean 二，Debian 10 升 11 cat &lt;&lt; EOF &gt;/etc/apt/sources.list deb http://cloudfront.debian.net/debian bullseye main contrib non-free deb http://cloudfront.debian.net/debian bullseye-updates main contrib non-free deb http://cloudfront.debian.net/debian bullseye-backports main contrib non-free deb http://cloudfront.debian.net/debian-security bullseye-security main contrib non-free EOF sed -i &quot;s/ buster / bullseye /g&quot; /etc/apt/sources.list.d/* apt update &amp;&amp; apt -y full-upgrade apt -y --purge autoremove &amp;&amp; apt -y autoclean 三，……]]></summary><content type="html"><![CDATA[<h4 id="一debian-9-升-10">一，Debian 9 升 10</h4>
+<pre tabindex="0"><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
+deb http://cloudfront.debian.net/debian buster main contrib non-free
+deb http://cloudfront.debian.net/debian buster-updates main contrib non-free
+deb http://cloudfront.debian.net/debian-security buster/updates main contrib non-free
 EOF
-</code></pre><h5 id="国外">国外</h5>
-<pre><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
-deb http://deb.debian.org/debian buster main contrib non-free
-deb http://deb.debian.org/debian buster-updates main contrib non-free
-deb http://deb.debian.org/debian-security buster/updates main contrib non-free
-EOF
-</code></pre><pre><code>sed -i &quot;s/ stretch / buster /g&quot; /etc/apt/sources.list.d/*
+
+sed -i &quot;s/ stretch / buster /g&quot; /etc/apt/sources.list.d/*
 apt update &amp;&amp; apt -y full-upgrade
 apt -y --purge autoremove &amp;&amp; apt -y autoclean
 </code></pre><h4 id="二debian-10-升-11">二，Debian 10 升 11</h4>
-<h5 id="国内-1">国内</h5>
-<pre><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
-deb http://mirrors.aliyun.com/debian bullseye main contrib non-free
-deb http://mirrors.aliyun.com/debian bullseye-updates main contrib non-free
-deb http://mirrors.aliyun.com/debian bullseye-backports main contrib non-free
-deb http://mirrors.aliyun.com/debian-security bullseye-security main contrib non-free
+<pre tabindex="0"><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
+deb http://cloudfront.debian.net/debian bullseye main contrib non-free
+deb http://cloudfront.debian.net/debian bullseye-updates main contrib non-free
+deb http://cloudfront.debian.net/debian bullseye-backports main contrib non-free
+deb http://cloudfront.debian.net/debian-security bullseye-security main contrib non-free
 EOF
-</code></pre><h5 id="国外-1">国外</h5>
-<pre><code>cat &lt;&lt; EOF &gt;/etc/apt/sources.list
-deb http://deb.debian.org/debian bullseye main contrib non-free
-deb http://deb.debian.org/debian bullseye-updates main contrib non-free
-deb http://deb.debian.org/debian bullseye-backports main contrib non-free
-deb http://deb.debian.org/debian-security bullseye-security main contrib non-free
-EOF
-</code></pre><pre><code>sed -i &quot;s/ buster / bullseye /g&quot; /etc/apt/sources.list.d/*
+
+sed -i &quot;s/ buster / bullseye /g&quot; /etc/apt/sources.list.d/*
 apt update &amp;&amp; apt -y full-upgrade
 apt -y --purge autoremove &amp;&amp; apt -y autoclean
 </code></pre><h4 id="三重启查看当前系统版本">三，重启查看当前系统版本</h4>
-<pre><code>reboot
-</code></pre><pre><code>cat /etc/debian_version
-</code></pre>]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/stretch/" term="stretch" label="stretch"/><category scheme="https://jacyl4.github.io/tags/buster/" term="buster" label="buster"/><category scheme="https://jacyl4.github.io/tags/bullseye/" term="bullseye" label="bullseye"/></entry><entry><title type="text">给国外/国内虚拟机DD debian 系统</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/dd_debian/"/><id>https://jacyl4.github.io/posts/dd_debian/</id><updated>2021-08-27T20:55:52+08:00</updated><published>2020-05-27T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">查看虚拟机的ip跟其上级ip ip route show 把查到的ip填入最下面的dd命令里。 安装DD运行所需的依赖 当前系统为centos时 yum install -y xz openssl gawk file 当前系统为debian时 apt install -y xz-utils openssl gawk file DD命令 国内 bash &amp;lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \ -d 9 -v amd64 -a \ -p password \ --mirror &amp;quot;http://mirrors.aliyun.com/debian/&amp;quot; \ --ip-addr 192.168.1.2 \ --ip-mask 255.255.255.0 \ --ip-gate 192.168.1.1 国……</summary><content type="html"><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
+<pre tabindex="0"><code>reboot
+</code></pre><pre tabindex="0"><code>cat /etc/debian_version
+</code></pre>]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/stretch/" term="stretch" label="stretch"/><category scheme="https://jacyl4.github.io/tags/buster/" term="buster" label="buster"/><category scheme="https://jacyl4.github.io/tags/bullseye/" term="bullseye" label="bullseye"/></entry><entry><title type="text">给国外/国内虚拟机DD debian 系统</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/dd_debian/"/><id>https://jacyl4.github.io/posts/dd_debian/</id><updated>2021-09-07T05:14:29+08:00</updated><published>2020-05-27T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">查看虚拟机的ip跟其上级ip ip route show 把查到的ip填入最下面的dd命令里。 安装DD运行所需的依赖 当前系统为centos时 yum install -y xz openssl gawk file 当前系统为debian时 apt install -y xz-utils openssl gawk file DD命令 国内 bash &amp;lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \ -d 9 -v amd64 -a \ -p password \ --mirror &amp;quot;http://mirrors.aliyun.com/debian/&amp;quot; \ --ip-addr 192.168.1.2 \ --ip-mask 255.255.255.0 \ --ip-gate 192.168.1.1 国……</summary><content type="html"><![CDATA[<h4 id="查看虚拟机的ip跟其上级ip">查看虚拟机的ip跟其上级ip</h4>
 <p><code>ip route show</code> <br>
 把查到的ip填入最下面的dd命令里。</p>
 <h4 id="安装dd运行所需的依赖">安装DD运行所需的依赖</h4>
@@ -45,7 +32,7 @@ apt -y --purge autoremove &amp;&amp; apt -y autoclean
 <code>apt install -y xz-utils openssl gawk file</code></p>
 <h4 id="dd命令">DD命令</h4>
 <h5 id="国内">国内</h5>
-<pre><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \
+<pre tabindex="0"><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/119.29.29.29/') \
 -d 9 -v amd64 -a \
 -p password \
 --mirror &quot;http://mirrors.aliyun.com/debian/&quot; \
@@ -53,7 +40,7 @@ apt -y --purge autoremove &amp;&amp; apt -y autoclean
 --ip-mask 255.255.255.0 \
 --ip-gate 192.168.1.1
 </code></pre><h5 id="国外">国外</h5>
-<pre><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/1.1.1.1/') \
+<pre tabindex="0"><code>bash &lt;(wget --no-check-certificate -qO- http://moeclub.org/attachment/LinuxShell/InstallNET.sh | sed 's/8.8.8.8/1.1.1.1/') \
 -d 9 -v amd64 -a \
 -p password \
 -apt &quot;http://deb.debian.org/debian/&quot; \
@@ -64,7 +51,7 @@ apt -y --purge autoremove &amp;&amp; apt -y autoclean
 <li>9 就是debian9</li>
 <li>password 就是密码</li>
 </ul>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/dd/" term="DD" label="DD"/></entry><entry><title type="text">终端内用于查看网络情况的指令</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/shell_net_test/"/><id>https://jacyl4.github.io/posts/shell_net_test/</id><updated>2021-08-27T20:55:52+08:00</updated><published>2020-05-09T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[列出适配器名称 ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq 查看端口占用 netstat -anp|grep 5390 或 lsof -i:5390 查看进程pid ps -ef | grep nginx 根据pid查看端口占用 netstat -nap | grep 10191 查看连接数 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;t&quot;,state[key]}' 查看tcpfastopen grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92 | column -t 入口流量信息统计GB (ens18) echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if……]]></summary><content type="html"><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/dd/" term="DD" label="DD"/></entry><entry><title type="text">终端内用于查看网络情况的指令</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/shell_net_test/"/><id>https://jacyl4.github.io/posts/shell_net_test/</id><updated>2021-09-07T05:14:29+08:00</updated><published>2020-05-09T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"><![CDATA[列出适配器名称 ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq 查看端口占用 netstat -anp|grep 5390 或 lsof -i:5390 查看进程pid ps -ef | grep nginx 根据pid查看端口占用 netstat -nap | grep 10191 查看连接数 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;t&quot;,state[key]}' 查看tcpfastopen grep '^TcpExt:' /proc/net/netstat | cut -d ' ' -f 87-92 | column -t 入口流量信息统计GB (ens18) echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if……]]></summary><content type="html"><![CDATA[<h4 id="列出适配器名称">列出适配器名称</h4>
 <p><code>ifconfig | grep -E -o &quot;^[a-z0-9]+&quot; | grep -v &quot;lo&quot; | uniq</code></p>
 <h4 id="查看端口占用">查看端口占用</h4>
 <p><code>netstat -anp|grep 5390</code></p>
@@ -82,27 +69,27 @@ apt -y --purge autoremove &amp;&amp; apt -y autoclean
 <p><code>echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if ($0 ~eth){print $3,$11}}' /proc/net/dev | awk '{print $1}') /1024 /1024 /1024&quot; | bc</code></p>
 <h4 id="出口流量信息统计gb-ens18">出口流量信息统计GB (ens18)</h4>
 <p><code>echo &quot;$(awk -v eth=ens18 -F'[: ]+' '{if ($0 ~eth){print $3,$11}}' /proc/net/dev | awk '{print $2}') /1024 /1024 /1024&quot; | bc</code></p>
-]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/shell/" term="shell" label="shell"/></entry><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2021-08-27T20:55:52+08:00</updated><published>2020-04-22T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。 /interface vrrp add name=vrrp1 interface=eth1 vrid=1 /interface vrrp add name=vrrp2……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
+]]></content><category scheme="https://jacyl4.github.io/categories/linux/" term="linux" label="linux"/><category scheme="https://jacyl4.github.io/tags/debian/" term="debian" label="debian"/><category scheme="https://jacyl4.github.io/tags/shell/" term="shell" label="shell"/></entry><entry><title type="text">RouterOS电信移动聚合实例</title><link rel="alternate" type="text/html" href="https://jacyl4.github.io/posts/ros_ct_cmcc/"/><id>https://jacyl4.github.io/posts/ros_ct_cmcc/</id><updated>2021-09-07T05:14:29+08:00</updated><published>2020-04-22T00:00:00+08:00</published><author><name>JacyL4</name><uri>https://seso.icu/</uri><email>jacyl4@gmail.com</email></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">实例宽带接入： 电信（双拨） 移动 一，建立vrrp用于拨号 提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。 /interface vrrp add name=vrrp1 interface=eth1 vrid=1 /interface vrrp add name=vrrp2……</summary><content type="html"><![CDATA[<p>实例宽带接入：</p>
 <p>电信（双拨）</p>
 <p>移动</p>
 <h1 id="一建立vrrp用于拨号">一，建立vrrp用于拨号</h1>
 <p>提前摸清ros里的网口顺序，实例中，电信插eth1口，移动插eth2口，桥接接口名为bridge1，给bridge1分配个ip，比如10.0.0.2，就是ros地址。</p>
-<pre><code>/interface vrrp add name=vrrp1 interface=eth1 vrid=1
+<pre tabindex="0"><code>/interface vrrp add name=vrrp1 interface=eth1 vrid=1
 /interface vrrp add name=vrrp2 interface=eth1 vrid=2
 /interface vrrp add name=vrrp3 interface=eth2 vrid=3
 </code></pre><p>给端口们预先分配好ip，随自己的习惯分配好了，因为vrrp需要预设好ip才会显示已连接</p>
-<pre><code>/ip address add address=192.168.10.1/24 interface=eth1
+<pre tabindex="0"><code>/ip address add address=192.168.10.1/24 interface=eth1
 /ip address add address=192.168.20.1/24 interface=eth2
 /ip address add address=192.168.10.11/24 interface=vrrp1
 /ip address add address=192.168.10.12/24 interface=vrrp2
 /ip address add address=192.168.20.11/24 interface=vrrp3
 </code></pre><h1 id="二建立pppoe拨号">二，建立pppoe拨号</h1>
-<pre><code>/interface pppoe-client add name=pppoe-CT1 max-mtu=1480 max-mru=1480 interface=vrrp1 user=宽带帐号 password=宽带密码 add-default-route=no disable=no
+<pre tabindex="0"><code>/interface pppoe-client add name=pppoe-CT1 max-mtu=1480 max-mru=1480 interface=vrrp1 user=宽带帐号 password=宽带密码 add-default-route=no disable=no
 /interface pppoe-client add name=pppoe-CT2 max-mtu=1480 max-mru=1480 interface=vrrp2 user=宽带帐号 password=宽带密码 add-default-route=no disable=no
 /interface pppoe-client add name=pppoe-CMCC1 max-mtu=1480 max-mru=1480 interface=vrrp3 user=宽带帐号 password=宽带密码 add-default-route=no disable=no
 </code></pre><h1 id="三防火墙基础防护">三，防火墙基础防护</h1>
 <p>下面第五行&quot;src-address=10.0.0.0/24&quot;，这个是我内网的网段，表示该ip段可以连入ros，进行设置。根据自己情况改。</p>
-<pre><code>/ip firewall filter
+<pre tabindex="0"><code>/ip firewall filter
 add chain=input connection-state=invalid action=drop comment=&quot;Drop Invalid connections&quot;  
 add chain=input connection-state=established action=accept comment=&quot;Allow Established connections&quot;  
 add chain=input protocol=icmp action=accept comment=&quot;Allow ICMP&quot;  
@@ -127,7 +114,7 @@ add chain=input protocol=tcp tcp-flags=fin,psh,urg,!syn,!rst,!ack action=drop co
 add chain=input protocol=tcp tcp-flags=fin,syn,rst,psh,ack,urg action=drop comment=&quot;ALL/ALL scan&quot;
 add chain=input protocol=tcp tcp-flags=!fin,!syn,!rst,!psh,!ack,!urg action=drop comment=&quot;NMAP NULL scan&quot;
 </code></pre><h1 id="四建立nat伪装与端口映射">四，建立nat伪装与端口映射</h1>
-<pre><code>/ip firewall nat
+<pre tabindex="0"><code>/ip firewall nat
 add chain=srcnat out-interface=pppoe-CT1 action=masquerade
 add chain=srcnat out-interface=pppoe-CT2 action=masquerade
 add chain=srcnat out-interface=pppoe-CMCC1 action=masquerade
@@ -138,17 +125,17 @@ add chain=dstnat protocol=tcp dst-port=1-65535 in-interface=pppoe-CT1 action=dst
 <p>下载文件 <a href="https://raw.githubusercontent.com/jacyl4/ros-pbr-CT-CMCC/master/ros-dpbr-CT-CMCC.rsc">ros-dpbr-CT-CMCC.rsc</a></p>
 <p>导入winbox的Files里</p>
 <p>运行如下，把ip段导入ros firewall的address lists里，供下面标记时使用。（防止重复导入，前两行是删除现有的电信段与移动段）</p>
-<pre><code>/ip firewall address-list remove [find list=&quot;dpbr-CT&quot;]
+<pre tabindex="0"><code>/ip firewall address-list remove [find list=&quot;dpbr-CT&quot;]
 /ip firewall address-list remove [find list=&quot;dpbr-CMCC&quot;]
 /import ros-dpbr-CT-CMCC.rsc
 </code></pre><h2 id="1排除内网通讯">1，排除内网通讯</h2>
-<pre><code>/ip firewall address-list
+<pre tabindex="0"><code>/ip firewall address-list
 add address=10.0.0.0/24 list=local comment=local
 
 /ip firewall mangle
 add chain=prerouting src-address-list=local dst-address-list=local action=accept comment=&quot;local&quot;
 </code></pre><h2 id="2源进标记">2，源进标记</h2>
-<pre><code>/ip firewall mangle
+<pre tabindex="0"><code>/ip firewall mangle
 add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT1 action=mark-connection new-connection-mark=CT_conn1 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=pppoe-CT2 action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
@@ -156,26 +143,26 @@ add chain=prerouting connection-mark=no-mark in-interface=pppoe-CMCC1 action=mar
 <p>示例：</p>
 <p>111.111.111.111是搬瓦工vps ip，注释名称bwg cn2gia，走电信线路</p>
 <p>222.222.222.222是Azure HK vps ip，注释名称azure HK，走移动线路</p>
-<pre><code>/ip firewall address-list
+<pre tabindex="0"><code>/ip firewall address-list
 add address=111.111.111.111 list=CTv2 comment=&quot;bwg cn2gia&quot;
 add address=222.222.222.222 list=CMv2 comment=&quot;azure HK&quot;
-</code></pre><pre><code>/ip firewall mangle
+</code></pre><pre tabindex="0"><code>/ip firewall mangle
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-type=!local dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn1 comment=v2
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-type=!local dst-address-list=CTv2 action=mark-connection new-connection-mark=CT_conn2
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-list=CMv2 action=mark-connection new-connection-mark=CMCC_conn1
 </code></pre><h2 id="4pcc标记">4，PCC标记</h2>
 <p>国内不同运营商指定出口，因为电信双拨，双拨的还得PCC聚合下，至于叠不叠带宽，各地随缘了。移动就单拨就直接标记一下就行了。</p>
-<pre><code>/ip firewall mangle
+<pre tabindex="0"><code>/ip firewall mangle
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/0 dst-address-type=!local dst-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=&quot;PCC spec&quot;
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:2/1 dst-address-type=!local dst-address-list=dpbr-CT action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 dst-address-type=!local dst-address-list=dpbr-CMCC action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 </code></pre><p>ros防火墙规则自上而下顺序匹配，上面没匹配到的，就接下来整体聚合。</p>
-<pre><code>/ip firewall mangle
+<pre tabindex="0"><code>/ip firewall mangle
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:3/0 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn1 passthrough=yes comment=PCC
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:3/1 dst-address-type=!local action=mark-connection new-connection-mark=CT_conn2 passthrough=yes
 add chain=prerouting connection-mark=no-mark in-interface=bridge1 per-connection-classifier=both-addresses-and-ports:3/2 dst-address-type=!local action=mark-connection new-connection-mark=CMCC_conn1 passthrough=yes
 </code></pre><h2 id="5让数据根据上面线路标记选择路由">5，让数据根据上面线路标记选择路由</h2>
-<pre><code>/ip firewall mangle
+<pre tabindex="0"><code>/ip firewall mangle
 add chain=prerouting connection-mark=CT_conn1 in-interface=bridge1 action=mark-routing new-routing-mark=CT1 passthrough=yes comment=&quot;dynamic pbr&quot;
 add chain=prerouting connection-mark=CT_conn2 in-interface=bridge1 action=mark-routing new-routing-mark=CT2 passthrough=yes
 add chain=prerouting connection-mark=CMCC_conn1 in-interface=bridge1 action=mark-routing new-routing-mark=CMCC1 passthrough=yes
@@ -184,7 +171,7 @@ add chain=output connection-mark=CT_conn1 action=mark-routing new-routing-mark=C
 add chain=output connection-mark=CT_conn2 action=mark-routing new-routing-mark=CT2 passthrough=yes
 add chain=output connection-mark=CMCC_conn1 action=mark-routing new-routing-mark=CMCC1 passthrough=yes
 </code></pre><h1 id="六设置路由">六，设置路由</h1>
-<pre><code>/ip route
+<pre tabindex="0"><code>/ip route
 add dst-address=0.0.0.0/0 gateway=pppoe-CT1 check-gateway=ping distance=1
 add dst-address=0.0.0.0/0 gateway=pppoe-CT2 check-gateway=ping distance=2
 add dst-address=0.0.0.0/0 gateway=pppoe-CMCC1 check-gateway=ping distance=2
